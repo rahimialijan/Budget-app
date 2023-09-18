@@ -1,1 +1,14 @@
 <h1>Groups List</h1>
+<%= link_to 'Add new group', new_group_path, class: "btn btn-primary" %>
+
+<% @groups.each do |group| %>
+  <div>
+    <%= link_to group_path(group) do %>
+        <h4>
+          <%= image_tag(group.icon) %>
+          <%= group.name %>
+          <%= group.entities.sum(:amount) %>
+        </h4>
+    <% end %>    
+  </div>
+<% end %>

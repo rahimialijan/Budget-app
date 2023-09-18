@@ -1,0 +1,13 @@
+
+
+<h3>Transaction</h3>
+
+<div>
+    <h4>
+        <%= image_tag(@group.icon) %>
+        <%= @group.name %>
+        <%= @group.entities.sum(:amount) %>
+    </h4>
+
+    <%= link_to 'New Transaction', new_group_entity_path(@group), class: "btn btn-primary" %>
+</div>

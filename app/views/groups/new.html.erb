@@ -1,0 +1,41 @@
+
+
+<h2>Create new Catagory</h2>
+
+<div>
+    <%= form_for @group do |f| %>
+        <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :icon,"Select an Icon" %>
+             <div class="icon-options">
+                
+                <%= radio_button_tag('group[icon]', 'icon1') %>
+                <%= image_tag(asset_path('icon1.png'), class: 'icon-image') %>
+                <%= label_tag('icon1', 'Icon 1') %><br>
+            
+                <%= radio_button_tag('group[icon]', 'icon2') %>
+                <%= image_tag(asset_path('icon2.png'), class: 'icon-image') %>
+                <%= label_tag('icon2', 'Icon 2') %><br>
+            
+                <%= radio_button_tag('group[icon]', 'icon3') %>
+                <%= image_tag(asset_path('icon3.png'), class: 'icon-image') %>
+                <%= label_tag('icon3', 'Icon 3') %><br>
+            
+                <%= radio_button_tag('group[icon]', 'icon4') %>
+                <%= image_tag(asset_path('icon4.png'), class: 'icon-image') %>
+                <%= label_tag('icon4', 'Icon 4') %><br>
+            
+                <%= radio_button_tag('group[icon]', 'icon5') %>
+                <%= image_tag(asset_path('icon5.png'), class: 'icon-image') %>
+                <%= label_tag('icon5', 'Icon 5') %><br>
+            </div>
+        </div>
+        <div class="actions">
+            <%= f.submit 'Create Group', class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+</div>
