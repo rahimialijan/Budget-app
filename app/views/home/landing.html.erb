@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to My App</title>
+</head>
+<body>
+  <h1>Welcome to My App</h1>
+  <p>This is the landing page of my application.</p>
+
+  <!-- You can add more HTML content here -->
+<% if user_signed_in? %>
+
+    <%= form_with url: destroy_user_session_path, method: :delete do %>
+        <%= submit_tag 'Logout', class: "btn btn-primary" %>
+    <% end %>
+    else
+
+  <%= link_to 'Log In', new_user_session_path, class: "btn btn-primary" %>
+
+  <%= link_to 'Sign Up', new_user_registration_path , class: "btn btn-primary"%>
+
+  <% end %>
+</body>
+</html>
