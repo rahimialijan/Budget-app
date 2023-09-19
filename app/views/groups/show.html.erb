@@ -9,5 +9,18 @@
         <%= @group.entities.sum(:amount) %>
     </h4>
 
+    <div>
+    <ul>
+        <% @group.entities.each do |entity|%>
+            <li>
+                <%= entity.name %>
+                <%= entity.amount %>
+                <%= entity.created_at.strftime("%Y-%m-%d %H:%M") %>
+            </li>
+        <% end %>
+    </ul>
+    </div>
     <%= link_to 'New Transaction', new_group_entity_path(@group), class: "btn btn-primary" %>
 </div>
+
+

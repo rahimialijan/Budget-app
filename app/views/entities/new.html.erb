@@ -1,22 +1,23 @@
-<h3>New Entity</h3>
+<div class="category_form">
+  <%= form_with(model: [@group, @entity]) do |form| %>
+    <div class="transaction">
+      <h3 class="">Add Transaction</h3>
+      <div class="form_div">
+        <%= form.text_field :name, placeholder: "Transaction Name", class: "login-field" %>
+      </div><br>
 
-<%= form_with(model: [@group, @entity]) do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+      <div class="form_div">
+        <%= form.text_field :amount, placeholder: "Enter Amount", class: "login-field" %>
+      </div><br>
 
-  <div class="form-group">
-    <%= f.label :amount %>
-    <%= f.number_field :amount, class: 'form-control' %>
-  </div>
+      <div class="form_divas">
+        <label class="name_label">Select category</label>
+        <%= form.select :group_id, @groups.collect {|u| [u.name.capitalize, u.id] }, class:'' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :group_id, 'Select Group' %>
-    <%= f.collection_select :group_id, @user_groups, :id, :name, { prompt: 'Select a group' }, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Create Entity', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+      <div class=''>
+        <%= form.submit "Add transaction", class:"category_button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

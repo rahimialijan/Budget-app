@@ -1,31 +1,29 @@
 class EntitiesController < ApplicationController
     before_action :authenticate_user!
-    before_action :find_group
-
-
+    before_action :set_group
+  
     def new
-        @entity = Entity.new
-        @user_groups = current_user.groups
-      end
-
+      @entity = Entity.new
+      @groups = current_user.groups
+    end
     def create
-        @entity = @group.entities.new(entity_params)
-        @entity.user = current_user
+        @entity = Entity.new(entity_params)
+        @entity.user_id = current_user.id
+        @group = Group.find(params[:entity][:group_id])
         if @entity.save
-            redirect_to group_path(@group), notice: "Entity Created Successfuly"
+          GroupEntity.create(group: @group, entity: @entity)
+          redirect_to group_path(@group), notice: 'Transaction was successfully created.'
         else
-            render new
+          render :new, status: :unprocessable_entity
         end
-    end
-
-
+      end
     private
-
-    def find_group
-        @group = current_user.groups.find(params[:group_id])
+  
+    def set_group
+      @group = current_user.groups.find(params[:group_id])
     end
-
+  
     def entity_params
-        params.require(:entity).permit(:name, :amount)
+      params.require(:entity).permit(:name, :amount, group_ids: [])
     end
-end
+  end
