@@ -55,7 +55,7 @@ The Ruby on Rails capstone project is about building a mobile web application wh
 
 ## 🔭 Video Presentation <a name="video"></a>
 
-- [Video Presentation]()
+- [Video Presentation](https://www.loom.com/share/c1f1c5a10ef946299a30cd739e980bea?sid=7cda98f6-eada-43ff-98c1-443678343d5f)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
