@@ -1,41 +1,51 @@
-
-
-<h2>Create new Catagory</h2>
-
-<div>
+<div class="main-container">
+<div class="nav-container">
     <%= form_for @group do |f| %>
-        <div class="form-group">
-            <%= f.label :name %>
-            <%= f.text_field :name, class:"form-control" %>
+    <nav class="navbar">
+        <div class="container-fluid">
+        <%= link_to root_path, class: "text-white ml-3" do %>
+          <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
+        <% end %>
+          <p class="navbar-brand">Create New Catagory</p>
+          <a class="navbar-brand"><%= f.submit "save", class:'submit-btn' %></a>
         </div>
-
+      </nav>
+      <div class="form-field">
         <div class="form-group">
-            <%= f.label :icon,"Select an Icon" %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "Catagory Name" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :icon,"Select an Icon", class:"selection" %>
              <div class="icon-options">
-                
+                <div>
                 <%= radio_button_tag('group[icon]', 'icon1') %>
                 <%= image_tag(asset_path('icon1.png'), class: 'icon-image') %>
-                <%= label_tag('icon1', 'Icon 1') %><br>
-            
+                <%= label_tag('icon1', 'Food') %><br>
+                </div>
+                <div>
                 <%= radio_button_tag('group[icon]', 'icon2') %>
                 <%= image_tag(asset_path('icon2.png'), class: 'icon-image') %>
-                <%= label_tag('icon2', 'Icon 2') %><br>
-            
+                <%= label_tag('icon2', 'Rent') %><br>
+                </div>
+                <div>
                 <%= radio_button_tag('group[icon]', 'icon3') %>
                 <%= image_tag(asset_path('icon3.png'), class: 'icon-image') %>
-                <%= label_tag('icon3', 'Icon 3') %><br>
-            
+                <%= label_tag('icon3', 'Game') %><br>
+                <div>
+                </div>
                 <%= radio_button_tag('group[icon]', 'icon4') %>
                 <%= image_tag(asset_path('icon4.png'), class: 'icon-image') %>
-                <%= label_tag('icon4', 'Icon 4') %><br>
-            
+                <%= label_tag('icon4', 'Fee') %><br>
+                <div>
+                </div>
                 <%= radio_button_tag('group[icon]', 'icon5') %>
                 <%= image_tag(asset_path('icon5.png'), class: 'icon-image') %>
-                <%= label_tag('icon5', 'Icon 5') %><br>
+                <%= label_tag('icon5', 'Groceries Shopping') %><br>
+                </div>
             </div>
-        </div>
-        <div class="actions">
-            <%= f.submit 'Create Group', class: 'btn btn-primary' %>
         </div>
     <% end %>
 </div>
+</div>
+
+<

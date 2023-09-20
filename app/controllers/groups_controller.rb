@@ -10,15 +10,13 @@ class GroupsController < ApplicationController
     end
   
     def create
-        @entity = @group.entities.new(entity_params.merge(user_id: current_user.id))
-      
-        if @entity.save
-          redirect_to group_path(@group), notice: 'Entity created successfully.'
-        else
-          render 'new'
-        end
+      @group = current_user.groups.new(group_params)
+      if @group.save
+        redirect_to groups_path, notice: 'Category created successfully.'
+      else
+        render 'new'
       end
-      
+    end
   
     def show
       @group = current_user.groups.find(params[:id])

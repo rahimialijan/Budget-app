@@ -1,26 +1,37 @@
 
-
-<h3>Transaction</h3>
-
-<div>
-    <h4>
-        <%= image_tag(@group.icon) %>
-        <%= @group.name %>
-        <%= @group.entities.sum(:amount) %>
-    </h4>
-
-    <div>
-    <ul>
-        <% @group.entities.each do |entity|%>
-            <li>
-                <%= entity.name %>
-                <%= entity.amount %>
-                <%= entity.created_at.strftime("%Y-%m-%d %H:%M") %>
-            </li>
-        <% end %>
-    </ul>
-    </div>
-    <%= link_to 'New Transaction', new_group_entity_path(@group), class: "btn btn-primary" %>
+<div class="main-container">
+  <div class="nav-container index-container">
+        <nav class="navbar">
+        <div class="container-fluid">
+          <%= link_to root_path, class: "text-white ml-3" do %>
+            <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
+          <% end %>
+            <p class="navbar-brand">Transactions</p>
+                <a class="navbar-brand"><%= link_to 'new', new_group_path, class: "submit-btn" %></a>
+          </div>
+        </nav>
+         <div class="shadow mb-3 bg-body-tertiary rounded groups-elements">
+            <div><%= image_tag(@group.icon, class:"icon") %></div>
+            <div class="group-item"> <%= @group.name%></div>
+            <div class="group-item"><%= @group.entities.sum(:amount)  %></div>
+        </div>
+        
+            <% @group.entities.each do |entity|%>
+                <div class="shadow mb-2 bg-body-tertiary rounded groups-elements entity-el">
+                    <div>
+                    <%= entity.name %><br>
+                    <span class="timestamp"><%= entity.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+                    </div>
+                    <div><%= entity.amount %></div>
+                </div>
+            <% end %>
+    <footer class="text-center text-lg-start">
+          <div class="text-center p-3">
+          <%= link_to 'New Transaction', new_group_entity_path(@group), class: "btn btn-outline-light" %>
+          </div>
+    </footer>
+  </div>
 </div>
+
 
 

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/landing'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,6 +7,6 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :show, :new, :create] do
     resources :entities, only: [:new, :create]
   end
-  root 'home#landing'
+  root 'home#check_and_redirect'
 
 end
