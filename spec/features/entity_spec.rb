@@ -7,14 +7,14 @@ RSpec.describe Entity, type: :model do
   let(:group) { create(:group) } # Assuming you have FactoryBot set up for User and Group models
 
   it 'is valid with valid attributes' do
-    entity = described_class.new(name: 'Sample Transaction', user: user)
+    entity = described_class.new(name: 'Sample Transaction', user:)
     entity.groups << group
 
     expect(entity).to be_valid
   end
 
   it 'is not valid without a name' do
-    entity = described_class.new(user: user)
+    entity = described_class.new(user:)
     entity.groups << group
 
     expect(entity).not_to be_valid
@@ -22,14 +22,14 @@ RSpec.describe Entity, type: :model do
   end
 
   it 'is associated with a user' do
-    entity = described_class.new(name: 'Sample Transaction', user: user)
+    entity = described_class.new(name: 'Sample Transaction', user:)
     entity.groups << group
 
     expect(entity.user).to eq(user)
   end
 
   it 'is associated with a group' do
-    entity = described_class.new(name: 'Sample Transaction', user: user)
+    entity = described_class.new(name: 'Sample Transaction', user:)
     entity.groups << group
 
     expect(entity.groups).to include(group)

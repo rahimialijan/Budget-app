@@ -1,17 +1,19 @@
-.timestamp{
-    font-size: 10px;
+.timestamp {
+  font-size: 10px;
 }
 
-.icon-options{
-    display: flex;
-    flex-direction: column;
-    padding-left: 50px;
+.icon-options {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
 }
-.icon-image{
-    width: 45px;
+
+.icon-image {
+  width: 45px;
 }
-.selection{
-    margin-left: 50px;
-    font-size: 20px;
-    font-weight: bold;
+
+.selection {
+  margin-left: 50px;
+  font-size: 20px;
+  font-weight: bold;
 }

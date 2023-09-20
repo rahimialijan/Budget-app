@@ -1,69 +1,73 @@
 
 @media (min-width: 1200px) {
-    .main-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }    
-    .rood-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border: 2px solid gray;
-        width: 50%;
-        align-self: center;
-        height: 80vh;
-        border-radius: 8px;
-    }
-    .img-container{
-       width: 60%;
-       height: 60%; 
-       align-self: center;
-    }
-    .logo{
-        width: 100%;
-        height: 100%;
-    }
-    .btn-container{
-        width: 50%;
-        align-self: center;
-        margin-top: 20px;
-    }
-    
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  .rood-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid gray;
+    width: 50%;
+    align-self: center;
+    height: 80vh;
+    border-radius: 8px;
+  }
+
+  .img-container {
+    width: 60%;
+    height: 60%;
+    align-self: center;
+  }
+
+  .logo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-container {
+    width: 50%;
+    align-self: center;
+    margin-top: 20px;
+  }
+}
 
 @media (max-width: 786px) {
-    .main-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }    
-    .rood-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        align-self: center;
-        height: 80vh;
-        border-radius: 8px;
-    }
-    .img-container{
-       width: 95%;
-       height: 65%; 
-       align-self: center;
-    }
-    .logo{
-        width: 100%;
-        height: 100%;
-    }
-    .btn-container{
-        width: 90%;
-        align-self: center;
-        margin-top: 20px;
-        align-self: center;
-    }
-    
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .rood-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    height: 80vh;
+    border-radius: 8px;
+  }
+
+  .img-container {
+    width: 95%;
+    height: 65%;
+    align-self: center;
+  }
+
+  .logo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-container {
+    width: 90%;
+    align-self: center;
+    margin-top: 20px;
+  }
+}

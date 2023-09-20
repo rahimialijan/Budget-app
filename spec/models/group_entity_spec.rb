@@ -7,60 +7,60 @@ RSpec.describe GroupEntity, type: :model do
       email: 'alijan@example.com',
       password: 'password123'
     )
-    
+
     group = Group.create(
       name: 'Test Group',
-      user: user
+      user:
     )
-    
+
     entity = Entity.create(
       name: 'Test Entity',
-      user: user
+      user:
     )
-    
+
     group_entity = GroupEntity.new(
-      group: group,
-      entity: entity
+      group:,
+      entity:
     )
-    
+
     expect(group_entity).to be_valid
   end
-  
+
   it 'is not valid without a group' do
     user = User.create(
       name: 'ali',
       email: 'ali@example.com',
       password: 'password123'
     )
-    
+
     entity = Entity.create(
       name: 'Test Entity',
-      user: user
+      user:
     )
-    
+
     group_entity = GroupEntity.new(
-      entity: entity
+      entity:
     )
-    
+
     expect(group_entity).not_to be_valid
   end
-  
+
   it 'is not valid without an entity' do
     user = User.create(
       name: 'ahmad',
       email: 'ahmad@example.com',
       password: 'password123'
     )
-    
+
     group = Group.create(
       name: 'Test Group',
-      user: user
+      user:
     )
-    
+
     group_entity = GroupEntity.new(
-      group: group
+      group:
     )
-    
+
     expect(group_entity).not_to be_valid
   end
 end

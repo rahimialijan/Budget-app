@@ -7,24 +7,24 @@ RSpec.describe Group, type: :model do
       email: 'alijan@gmail.com',
       password: 'password123'
     )
-    
+
     group = Group.new(
       name: 'Test Group',
-      user: user
+      user:
     )
-    
+
     expect(group).to be_valid
   end
-  
+
   it 'is not valid without a name' do
     user = User.create(
       name: 'ali',
       email: 'ali@gmail.com',
       password: 'password123'
     )
-    
-    group = Group.new(user: user)
-    
+
+    group = Group.new(user:)
+
     expect(group).not_to be_valid
   end
 end
