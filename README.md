@@ -78,6 +78,11 @@ bundle install
 
 ### Usage
 
+`rails db:drop`
+`rails db:create`
+`rails db:migrate`
+`rspec spec`
+
 \`\`\`
 rails s
 \`\`\`
