@@ -1,0 +1,32 @@
+<div class="main-container">
+  <div class="nav-container index-container">
+        <nav class="navbar">
+        <div class="container-fluid">
+        <%= link_to root_path, class: "text-white ml-3" do %>
+          <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
+        <% end %>                        
+            <p class="navbar-brand">CATAGORIES</p>
+              <%= form_with url: destroy_user_session_path, class:"nav-link", method: :delete do %>
+                <a class="navbar-brand"><%= link_to 'new', new_group_path, class: "submit-btn" %></a>
+                <%= submit_tag 'Logout', class: "submit-btn log-out-btn" %>
+              <% end %>
+          </div>
+        </nav>
+        <% @groups.each do |group| %>
+          <div>
+            <%= link_to group_path(group) do %>
+                <div class="shadow mb-3 bg-body-tertiary rounded groups-elements">
+                      <div><%= image_tag(group.icon, class:"icon")%></div>
+                     <div class="group-item"> <%= group.name%></div>
+                      <div class="group-item"><%= group.entities.sum(:amount)  %></div>
+                </div>
+            <% end %>    
+          </div>
+        <% end %>
+        <footer class="text-center text-lg-start">
+          <div class="text-center p-3">
+            <%= link_to 'Add New Catagory', new_group_path, class:"btn btn-outline-light" %>
+          </div>
+        </footer>
+  </div>
+</div>

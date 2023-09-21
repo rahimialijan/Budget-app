@@ -1,0 +1,88 @@
+@media (min-width: 900px) and (max-width: 1600px) {
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 92vh;
+  }
+
+  .submit-btn {
+    background-color: transparent;
+    border: none;
+    color: #ece8e8;
+  }
+
+  .navbar {
+    background-color: rgba(45, 84, 152, 0.895);
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-field {
+    margin-top: 30px;
+  }
+
+  .render {
+    align-self: center;
+  }
+
+  .forgot-pass {
+    color: rgb(69, 69, 69);
+  }
+
+  .navbar-brand {
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .submit-btn {
+    background-color: transparent;
+    border: none;
+    color: #ece8e8;
+  }
+
+  .navbar {
+    background-color: rgba(45, 84, 152, 0.895);
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-field {
+    margin-top: 20px;
+  }
+
+  .render {
+    align-self: center;
+  }
+
+  .forgot-pass {
+    color: rgb(69, 69, 69);
+  }
+
+  .navbar-brand {
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+}
